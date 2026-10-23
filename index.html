@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BAMP — By Any Means Possible</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="announcement">FREE SHIPPING OVER R1,500 • SOUTH AFRICA • NEW DROP LIVE</div>
+<header class="nav">
+  <a href="/" class="brand">BAMP<span>BY ANY MEANS POSSIBLE</span></a>
+  <nav><a href="#shop">Shop</a><a href="#collections">Collections</a><a href="#story">Story</a></nav>
+  <button class="bag" onclick="openBag()">BAG <b id="bagCount">0</b></button>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">EST. 2025 • SOUTH AFRICA</p>
+    <h1>BY ANY<br>MEANS<br>POSSIBLE</h1>
+    <p class="sub">MORE THAN CLOTHING. IT'S A MINDSET.</p>
+    <a class="button" href="#shop">SHOP THE DROP</a>
+  </div>
+</section>
+
+<section id="collections" class="collections">
+  <div class="section-title"><h2>COLLECTIONS</h2><p>BUILT FOR THE JOURNEY</p></div>
+  <div class="collection-grid">
+    <button onclick="filter('Core')"><span>01</span><strong>CORE</strong><small>Statement tees</small></button>
+    <button onclick="filter('Essentials')"><span>02</span><strong>ESSENTIALS</strong><small>Everyday pieces</small></button>
+    <button onclick="filter('Headwear')"><span>03</span><strong>HEADWEAR</strong><small>Caps + beanies</small></button>
+    <button onclick="filter('Bags')"><span>04</span><strong>BAGS</strong><small>Move with purpose</small></button>
+    <button onclick="filter('Limited')"><span>05</span><strong>LIMITED</strong><small>Small-batch drops</small></button>
+    <button onclick="filter('All')"><span>06</span><strong>ALL</strong><small>Shop everything</small></button>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="section-title"><h2>SHOP BAMP</h2><p id="filterLabel">ALL PRODUCTS</p></div>
+  <div id="products" class="product-grid"></div>
+</section>
+
+<section id="story" class="manifesto">
+  <p class="eyebrow">THE BAMP MINDSET</p>
+  <h2>NO SHORTCUTS.<br>NO LIMITS.</h2>
+  <p>Designed for people who keep moving when the easy route ends. Clean silhouettes, bold statements and everyday pieces built around one mindset.</p>
+</section>
+
+<section class="newsletter">
+  <div><p class="eyebrow">STAY IN THE LOOP</p><h2>FIRST ACCESS TO NEW DROPS.</h2></div>
+  <form onsubmit="subscribe(event)"><input id="email" type="email" required placeholder="YOUR EMAIL ADDRESS"><button class="button">SIGN UP</button></form>
+</section>
+
+<footer><div><b>BAMP</b><br>BY ANY MEANS POSSIBLE</div><div>© 2026 BAMP • SOUTH AFRICA</div></footer>
+
+<div id="productModal" class="overlay" onclick="if(event.target===this)closeProduct()">
+  <div class="modal product-modal"><button class="x" onclick="closeProduct()">×</button><div id="productDetail"></div></div>
+</div>
+
+<div id="bagModal" class="overlay" onclick="if(event.target===this)closeBag()">
+  <div class="modal"><button class="x" onclick="closeBag()">×</button><h2>YOUR BAG</h2><div id="bagItems"></div><div class="totals"><span>TOTAL</span><b id="bagTotal">R0</b></div><button class="button full" onclick="openCheckout()">CHECKOUT</button></div>
+</div>
+
+<div id="checkoutModal" class="overlay">
+  <div class="modal checkout-modal"><button class="x" onclick="closeCheckout()">×</button>
+    <div class="checkout-head"><p class="eyebrow">SECURE CHECKOUT</p><h2>COMPLETE YOUR ORDER</h2><p>Pay securely through Payfast. Your card/banking details are entered on Payfast's secure payment page.</p></div>
+    <form id="checkoutForm" onsubmit="pay(event)">
+      <div class="fields">
+        <input name="firstName" required placeholder="FIRST NAME">
+        <input name="lastName" required placeholder="LAST NAME">
+        <input name="email" required type="email" placeholder="EMAIL">
+        <input name="phone" required placeholder="PHONE">
+        <input name="address" required placeholder="DELIVERY ADDRESS">
+        <input name="city" required placeholder="CITY">
+        <input name="province" required placeholder="PROVINCE">
+        <input name="postalCode" required placeholder="POSTAL CODE">
+      </div>
+      <label class="check"><input type="checkbox" id="terms" required> I confirm my details and order are correct.</label>
+      <div class="payment-box"><b>PAYMENT</b><span>Payfast • Secure hosted checkout</span></div>
+      <button id="payBtn" class="button full">PAY <span id="checkoutTotal">R0</span></button>
+      <p class="tiny">The live payment button requires your Payfast merchant credentials in the server environment. The included project defaults to Payfast Sandbox for testing.</p>
+    </form>
+  </div>
+</div>
+<script src="/app.js"></script>
+</body></html>

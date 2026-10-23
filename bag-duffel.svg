@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 640">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#24241f"/><stop offset="1" stop-color="#090909"/></linearGradient></defs>
+    <rect width="512" height="640" fill="url(#g)"/><rect x="115" y="175" width="282" height="340" rx="22" fill="#121212" stroke="#eee" stroke-width="4"/>
+        <path d="M180 175 Q180 95 256 95 Q332 95 332 175" fill="none" stroke="#eee" stroke-width="14"/>
+        <text x="256" y="325" text-anchor="middle" fill="#eee" font-size="34" font-weight="900">BAMP</text>
+        <text x="256" y="355" text-anchor="middle" fill="#aaa" font-size="11" letter-spacing="2">MOVE DIFFERENT</text>
+    <text x="256" y="600" text-anchor="middle" fill="#777" font-size="11" letter-spacing="3">BAMP HEAVY DUFFEL</text>
+    </svg>
